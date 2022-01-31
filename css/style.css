@@ -4,19 +4,22 @@
 /* Root Variables */
 :root{
     --primary-font: rubik, sans-serif;
-    --primary-color-main: #06C167;
-    --primary-color-dark: #048848;
-    --secondary-color: #ff380b;
-    --primary-color-light: #F3FCF7;
+    --primary-color-main: #F53838;
+    --primary-color-dark: #C91B1B;
+    --primary-color-light: #FFECEC;
+    --secondary-color: #2FAB73;
     --border-color: #70707015;
-    --text-clor-main: #1D1D1F;
-    --text-clor-light: #767675;
+    --text-clor-main: #0B132A;
+    --text-clor-light: #4F5665;
     --text-white: #fff;
-    --site-width: 1170px;
+    --btn-shadow: rgba(245, 56, 56, 0.35);
+    --container-width: 1170px;
     --backdrop-index: 250;
     --close-icon-index: 300;
     --header-sticky-index: 9999;
     --button-width: 100%;
+    --section-spacing: 10vh;
+    --fa-li-margin: 20px;
 }
 
 /* General Settings */
@@ -29,8 +32,9 @@ body{
     font-family: var(--primary-font);
     font-size: 1rem;
     font-weight: normal;
-    color: var(--text-clor-main);
     background: var(--body-clolor, #fff);
+    color: var(--text-clor-main);
+    line-height: 1.5;
 }
 main{
     width: 100%;
@@ -39,10 +43,415 @@ main{
 img{
     max-width: 100%;
 }
+h3{
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+section{
+    margin-bottom: var(--section-spacing);
+}
 
 /* Common CSS */
 .container{
     width: 90%;
-    max-width: var(--site-width);
+    max-width: var(--container-width);
     margin: 0 auto;
 }
+.btn{
+    border: none;
+    border-radius: 1rem;
+    background: none;
+    padding: .5rem 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .4s ease-out;
+}
+.btn-primary{
+    background: var(--primary-color-main);
+    color: var(--text-white);
+    position: relative;
+}
+.btn-primary::after{
+    content: "";
+    width: 90%;
+    height: 100%;
+    background: var(--btn-shadow);
+    filter: blur(15px);
+    position: absolute;
+    left: 40%;
+    bottom: -40%;
+    transform: translate(-40%);
+}
+.btn-primary:hover{
+    background: var(--primary-color-dark);
+}
+.btn-outline{
+    border: 1px solid var(--primary-color-main);
+    color: var(--primary-color-main);
+}
+.btn-outline:hover{
+    background: var(--primary-color-main);
+    color: var(--primary-color-light);
+}
+.btn-text:hover{
+    color: var(--primary-color-main);
+}
+
+/** ====================================
+ ** Header
+ ** ==================================== */
+#main-header{
+    padding: 2.5rem 0;
+}
+#main-header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo{}
+.header__logo img{}
+.header__menu{}
+.header__menu ul{
+    display: flex;
+}
+.header__menu ul li{
+    padding: .25rem .125rem;
+    margin: 0 1rem;
+    position: relative;
+}
+.header__menu ul li::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color-main);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: none;
+    opacity: 0;
+    transition: all .4 ease-out;
+}
+.header__menu ul li:hover::after,
+.header__menu ul li:is(.active)::after{
+    visibility: visible;
+    opacity: 1;
+}
+.header__menu ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+.header__menu ul li:hover a,
+.header__menu ul li:is(.active) a{
+    color: var(--primary-color-main);
+}
+.header__button{}
+
+/** ====================================
+ ** Hero Section
+ ** ==================================== */
+ #hero{
+     padding: 2rem 0;
+ }
+ #hero .container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .hero__text{
+     flex: 1;
+ }
+ .hero__text h1{
+     font-size: calc(2rem + 1.5vw);
+     font-weight: 500;
+     line-height: 1.4;
+     margin-bottom: 2rem;
+ }
+ .hero__text h1 strong{
+     font-weight: 700;
+ }
+ .hero__text p{
+     margin-bottom: 3.5rem;
+ }
+ .hero__text button{
+     font-size: 1.1rem;
+     letter-spacing: 1px;
+     padding: 1.25rem 4rem;
+     border-radius: .75rem;
+ }
+ .hero__media{
+     flex: 1;
+ }
+ .hero__media img{}
+
+ /** ====================================
+ ** Counter Section
+ ** ==================================== */
+ #counter{ }
+ #counter .container{
+     display: flex;
+     justify-content: space-around;
+     align-items: stretch;
+     padding: 2rem;
+     background: var(--text-white);
+     border-radius: 1rem;
+     position: relative;
+ }
+ #counter .container::after{
+     content: "";
+     width: 100%;
+     height: 100%;
+     background: #0D1025;
+     opacity: 0.06;
+     filter: blur(114px);
+     border-radius: 1rem;
+     position: absolute;
+     bottom: -50%;
+     left: 0;
+     z-index: -2;
+ }
+ .counter__item{
+     flex: 1;
+     padding: 1.5rem;
+     border-right: 2px solid #EEEFF2;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 25px;
+ }
+ .counter__item:last-child{
+     border-right: none;
+ }
+ .counter__item .icon{
+     width: 55px;
+     height: 55px;
+     background: var(--primary-color-light);
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .counter__item .icon img{}
+ .counter__item .text{}
+ .counter__item .text h5{
+     font-size: 1.5rem;
+     font-weight: 700;
+ }
+ .counter__item .text p{
+     font-weight: 1.25rem;
+     font-weight: 500;
+     color: var(--text-clor-light);
+ }
+
+
+/** ====================================
+ ** Features Section
+ ** ==================================== */
+ #features{}
+ #features .container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     /* gap: 100px; */
+ }
+ .features__media{
+     flex: 2;
+ }
+ .features__media img{}
+ .features__text{
+     flex: 1;
+ }
+ .features__text h3{}
+ .features__text p{
+     margin-bottom: 2rem;
+ }
+ .features__text ul{}
+ .features__text ul li{
+     padding-top: .5rem;
+     padding-bottom: .5rem;
+ }
+ .features__text ul li i{
+     color: var(--secondary-color);
+ }
+
+ /* Pricing & Global BG */
+ .pricing-global-wraper{
+     background: linear-gradient(180deg, #F8F8F8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
+ }
+
+ /** ====================================
+ ** Pricing Section
+ ** ==================================== */
+#pricing{
+    padding-top: 3rem;
+}
+#pricing .container{
+    display: flex;
+    flex-direction: column;
+}
+.pricing__intro{
+    text-align: center;
+}
+.pricing__intro h3{}
+.pricing__intro p{
+    width: 50%;
+    margin: 0 auto 75px;
+}
+.pricing__tables{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 50px;
+}
+.pricing__table {
+    min-height: 760px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding: 75px 50px 50px;
+    border: 2px solid #DDDDDD;
+    border-radius: 1rem;
+}
+.pricing__table:last-child{
+    border-color: var(--primary-color-main);
+}
+.pricing__table img{}
+.pricing__table h4{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem 0;
+}
+.pricing__table .options{
+    flex: 2;
+}
+.pricing__table .options ul{}
+.pricing__table .options ul li{
+    padding: .7rem 0;
+}
+.pricing__table .options ul li i{
+    color: var(--secondary-color);
+}
+.pricing__table .price{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;;
+}
+.pricing__table .price span{
+    color: var(--text-clor-light);
+    font-weight: 400;
+}
+.pricing__table .btn{
+    padding: .5rem 3.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-width: 2px;
+    border-radius: 2rem;
+}
+
+/** ====================================
+ ** Global Network Section
+ ** ==================================== */
+ #global-network{}
+ #global-network .container{}
+ .global-network__intro{
+     text-align: center;
+     width: 43%;
+     margin: 0 auto var(--section-spacing);
+ }
+ .global-network__intro h3{}
+ .global-network__intro p strong{
+     font-weight: 500;
+ }
+ .global-network__map{}
+ .global-network__map svg{}
+
+ /** ====================================
+ ** Clients Section
+ ** ==================================== */
+ #clients{}
+ #clients .container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 25px;
+ }
+ #clients img{
+     width: 100%;
+     filter: grayscale(100%) opacity(.25) contrast(0%);
+     transition: filter .4s ease-in-out;
+     cursor: pointer;
+ }
+ #clients img:hover{
+     width: 100%;
+     filter: grayscale(0%) opacity(1) contrast(100%);
+ }
+ 
+
+ /** ====================================
+ ** Testimonial Section
+ ** ==================================== */
+ #testimonial{}
+ #testimonial .container{}
+ .testimonial__intro{}
+ .testimonial__intro h3{}
+ .testimonial__intro p{}
+ .testimonial__msg-body{}
+ .testimonial__cards{}
+ .testimonial__card{}
+ .testimonial__card-header{}
+ .testimonial__card-header .personal-info{}
+ .testimonial__card-header .personal-info .avator{}
+ .testimonial__card-header .personal-info .avator img{}
+ .testimonial__card-header .personal-info .name-title{}
+ .testimonial__card-header .personal-info .name-title h4{}
+ .testimonial__card-header .personal-info .name-title p{}
+ .testimonial__card-header .personal-info .rating{}
+ .testimonial__card-header .personal-info .rating p{}
+ .testimonial__card-header .personal-info .rating i{}
+ .testimonial__card-msg{}
+ .testimonial__card-msg p{}
+ .testimonial__card-handler{}
+ .testimonial__card-handler .dot{}
+ .testimonial__card-handler .dot ul{}
+ .testimonial__card-handler .dot ul li{}
+ .testimonial__card-handler .next-prev-btn{}
+ .testimonial__card-handler .next-prev-btn button{}
+ .testimonial__card-handler .next-prev-btn button i{}
+
+
+ 
+ /** ====================================
+ ** Newsletter Section
+ ** ==================================== */
+ #newsletter{}
+ .newsletter__container{}
+ .newsletter__text{}
+ .newsletter__text h3{}
+ .newsletter__text p{}
+ .newsletter__btn{}
+ .newsletter__btn button{}
+
+
+ 
+ /** ====================================
+ ** Footer Section
+ ** ==================================== */
+ #footer{
+     background: #F8F8F8;
+ }
+ #footer .container{}
+ .footer__widget{}
+ .footer__widget.col-1 img{}
+ .footer__widget.col-1 p{}
+ .footer__widget.col-1 p ul{}
+ .footer__widget.col-1 p ul li{}
+ .footer__widget.col-1 p.copyright{}
+ .footer__widget h5{}
+ .footer__widget ul{}
+ .footer__widget ul li{}
+ .footer__widget ul li a{}
