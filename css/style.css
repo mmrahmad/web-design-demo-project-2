@@ -1,0 +1,48 @@
+/* Import Fonts */
+@import url("https://use.typekit.net/jth2zxc.css");
+
+/* Root Variables */
+:root{
+    --primary-font: rubik, sans-serif;
+    --primary-color-main: #06C167;
+    --primary-color-dark: #048848;
+    --secondary-color: #ff380b;
+    --primary-color-light: #F3FCF7;
+    --border-color: #70707015;
+    --text-clor-main: #1D1D1F;
+    --text-clor-light: #767675;
+    --text-white: #fff;
+    --site-width: 1170px;
+    --backdrop-index: 250;
+    --close-icon-index: 300;
+    --header-sticky-index: 9999;
+    --button-width: 100%;
+}
+
+/* General Settings */
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-clor-main);
+    background: var(--body-clolor, #fff);
+}
+main{
+    width: 100%;
+    min-height: 100vh;
+}
+img{
+    max-width: 100%;
+}
+
+/* Common CSS */
+.container{
+    width: 90%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+}
