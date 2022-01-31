@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Main Styles -->
     <link rel="stylesheet" href="/css/style.css">
+    <!-- Script -->
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
     <!-- Start Header -->
@@ -1146,7 +1148,7 @@
         
         <!-- Start Testimonil Section -->
         <section id="testimonial">
-            <div class="container">
+            <div class="">
                 <div class="testimonial__intro">
                     <h3>Trusted by Thousands of Happy Customer</h3>
                     <p>These are the stories of our customers who have joined us with great pleasure when using this crazy feature.</p>
@@ -1154,6 +1156,68 @@
                 <div class="testimonial__msg-body">
                     <div class="testimonial__cards">
 
+                        <div class="testimonial__card active">
+                            <div class="testimonial__card-header">
+                                <div class="person-info">
+                                    <div class="avator">
+                                        <img src="/img/icons/avaror-1.png" alt="Avator 01">
+                                    </div>
+                                    <div class="name-title">
+                                        <h4>Viezh Robert</h4>
+                                        <p>Warsaw, Poland</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <p>4.5</p>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="testimonial__card-msg">
+                                <p>“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.</p>
+                            </div>
+                        </div>
+
+                        <div class="testimonial__card">
+                            <div class="testimonial__card-header">
+                                <div class="person-info">
+                                    <div class="avator">
+                                        <img src="/img/icons/avator-2.png" alt="Avator 02">
+                                    </div>
+                                    <div class="name-title">
+                                        <h4>Yessica Christy</h4>
+                                        <p>Shanxi, China</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <p>4.5</p>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="testimonial__card-msg">
+                                <p>“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.</p>
+                            </div>
+                        </div>
+
+                        <div class="testimonial__card">
+                            <div class="testimonial__card-header">
+                                <div class="person-info">
+                                    <div class="avator">
+                                        <img src="/img/icons/avator-3.png" alt="Avator 03">
+                                    </div>
+                                    <div class="name-title">
+                                        <h4>Kim Young Jou</h4>
+                                        <p>Seoul, South Korea</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <p>4.5</p>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="testimonial__card-msg">
+                                <p>“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.</p>
+                            </div>
+                        </div>
                         <div class="testimonial__card">
                             <div class="testimonial__card-header">
                                 <div class="person-info">
@@ -1217,19 +1281,40 @@
                             </div>
                         </div>
 
+                        <div class="testimonial__card">
+                            <div class="testimonial__card-header">
+                                <div class="person-info">
+                                    <div class="avator">
+                                        <img src="/img/icons/avator-3.png" alt="Avator 03">
+                                    </div>
+                                    <div class="name-title">
+                                        <h4>Kim Young Jou</h4>
+                                        <p>Seoul, South Korea</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <p>4.5</p>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="testimonial__card-msg">
+                                <p>“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.</p>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="testimonial__card-handler">
+                    <div class="testimonial__card-handler container">
                         <div class="dot">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <!-- <li class="active"></li>
+                                <li class=""></li>
+                                <li class=""></li>
+                                <li class=""></li> -->
                             </ul>
                         </div>
                         <div class="next-prev-btn">
-                            <button><i class="fas fa-arrow-right"></i></button>
-                            <button><i class="fas fa-arrow-left"></i></button>
+                            <button id="prev-btn" class="btn btn-outline"><i class="fas fa-arrow-left"></i></button>
+                            <button id="next-btn" class="btn btn-primary"><i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -1239,13 +1324,15 @@
 
         <!-- Start Newsletter Section -->
         <section id="newsletter">
-            <div class="newsletter__container">
-                <div class="newsletter__text">
-                    <h3>Subscribe Now for Get Special Features!</h3>
-                    <p>Let's subscribe with us and find the fun.</p>
-                </div>
-                <div class="newsletter__btn">
-                    <button>Subscribe Now</button>
+            <div class="container">
+                <div class="newsletter__container">
+                    <div class="newsletter__text">
+                        <h3>Subscribe Now for Get Special Features!</h3>
+                        <p>Let's subscribe with us and find the fun.</p>
+                    </div>
+                    <div class="newsletter__btn">
+                        <button class="btn btn-primary">Subscribe Now</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1258,7 +1345,7 @@
             <div class="footer__widget col-1">
                 <img src="/img/Logo.png" alt="Logo">
                 <p><strong>LaslesVPN</strong> is a private virtual network that has unique features and has high security.</p>
-                <ul class="socila">
+                <ul class="social">
                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fab fa-instagram"></i></a></li>
